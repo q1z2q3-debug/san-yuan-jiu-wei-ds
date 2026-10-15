@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>三元九维辨证推演 v1.1</title>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- 顶部栏 -->
+  <header id="topbar">
+    <div class="tb-title" id="tbTitle">三元九维 · 辨证推演</div>
+    <div class="tb-sub" id="tbSub">离线状态计算引擎 v1.1</div>
+  </header>
+
+  <!-- 页面容器 -->
+  <main id="pages">
+
+    <!-- ===== 推演页 ===== -->
+    <section class="page active" id="page-tuiyan">
+      <div class="steps-bar">
+        <div class="step-dot on" data-s="1"><i>1</i>采症</div>
+        <div class="step-line"></div>
+        <div class="step-dot" data-s="2"><i>2</i>辨证</div>
+        <div class="step-line"></div>
+        <div class="step-dot" data-s="3"><i>3</i>推演</div>
+      </div>
+
+      <!-- 第一步：症状采集 -->
+      <div class="wizard" id="wiz1">
+        <div class="card">
+          <div class="card-h">症状与体征采集 <span class="hint" id="selCount">已选 0 项</span></div>
+          <div class="group-tabs" id="symGroupTabs"></div>
+          <div class="chip-wrap" id="symChips"></div>
+        </div>
+        <div class="btn-row">
+          <button class="btn ghost" id="btnClearSyms">清空</button>
+          <button class="btn primary" id="btnToStep2">下一步：宏观辨证 →</button>
+        </div>
+      </div>
+
+      <!-- 第二步：宏观辨证标签 -->
+      <div class="wizard hide" id="wiz2">
+        <div class="card">
+          <div class="card-h">八纲辨证 <span class="hint">可多选，作为九维微观状态的校验与补充</span></div>
+          <div class="chip-wrap" id="bagangChips"></div>
+        </div>
+        <div class="card">
+          <div class="card-h">六经辨证 <span class="hint">可多选</span></div>
+          <div class="chip-wrap" id="liujingChips"></div>
+        </div>
+        <div class="card">
+          <div class="card-h">体质辨识 <span class="hint">单选</span></div>
+          <div class="chip-wrap" id="tizhiChips"></div>
+        </div>
+        <div class="btn-row">
+          <button class="btn ghost" id="btnBackStep1">← 上一步</button>
+          <button class="btn primary" id="btnRun">开始推演 ⚡</button>
+        </div>
+      </div>
+
+      <!-- 第三步：推演结果 -->
+      <div class="wizard hide" id="wiz3">
+        <div id="resultArea"></div>
+        <div class="btn-row">
+          <button class="btn ghost" id="btnRestart">重新采集</button>
+          <button class="btn primary" id="btnSaveRecord">保存本次推演记录</button>
+        </div>
+        <div class="disclaimer" id="reportDisclaimer"></div>
+      </div>
+    </section>
+
+    <!-- ===== 方剂库页 ===== -->
+    <section class="page" id="page-fangji">
+      <div class="card">
+        <div class="card-h">十四首经典方剂 · 九维向量库</div>
+        <div id="formulaList"></div>
+      </div>
+    </section>
+
+    <!-- ===== 知识库页 ===== -->
+    <section class="page" id="page-zhishi">
+      <div class="kb-tabs" id="kbTabs"></div>
+      <div id="kbContent"></div>
+    </section>
+
+    <!-- ===== 记录页 ===== -->
+    <section class="page" id="page-jilu">
+      <div class="card">
+        <div class="card-h">本地推演记录 <span class="hint">仅存储于本机，无任何网络上传</span></div>
+        <div id="recordList"></div>
+      </div>
+      <div class="btn-row"><button class="btn ghost" id="btnClearRecords">清空全部记录</button></div>
+    </section>
+
+  </main>
+
+  <!-- 底部导航 -->
+  <nav id="tabbar">
+    <div class="tab on" data-page="tuiyan"><span>☯</span>推演</div>
+    <div class="tab" data-page="fangji"><span>方</span>方剂库</div>
+    <div class="tab" data-page="zhishi"><span>典</span>知识库</div>
+    <div class="tab" data-page="jilu"><span>录</span>记录</div>
+  </nav>
+
+  <!-- 免责声明弹窗 -->
+  <div class="modal-mask hide" id="disclaimerModal">
+    <div class="modal">
+      <div class="modal-h">重要声明</div>
+      <div class="modal-b">
+        <p>本工具为<b>中医三元九维辨证辅助推演系统</b>，仅供中医理论学习、病机推演与临床思路拓展参考。</p>
+        <p><b>本工具不构成医疗诊断或用药建议</b>，推演结果不得直接作为处方依据。实际诊疗请遵执业医师面诊意见。</p>
+        <p>本应用为纯离线应用：不申请网络权限，不收集任何个人身份信息，所有数据仅保存在您的设备本地。</p>
+      </div>
+      <button class="btn primary full" id="btnAgree">我已阅读并知悉</button>
+    </div>
+  </div>
+
+</div>
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
