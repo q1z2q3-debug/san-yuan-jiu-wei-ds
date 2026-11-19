@@ -1,0 +1,38 @@
+# NOTICE
+
+San-Yuan Jiu-Wei Syndrome Differentiation System (三元九维辨证推演系统)
+Copyright (c) 2026 q1z2q3-debug
+
+## License map
+
+| Path | License |
+| --- | --- |
+| `app/`, `build.sh`, `review/*.js` | MIT (see `LICENSE`) |
+| `docs/`, `paper/`, `README.md` | CC BY 4.0 (see `LICENSE-docs.md`) |
+| `release/*` | Distributed binaries of the above; same licenses apply |
+
+## Third-party components
+
+- **No third-party JavaScript.** The H5 application uses only hand-written
+  vanilla JavaScript; there is no bundled framework, no CDN reference and no
+  runtime dependency.
+- **No third-party icons.** Launcher icons under `app/res/mipmap-*` are
+  original artwork created for this project.
+- **Android SDK / build-tools are NOT distributed.** The `android/sdk`
+  directory present in some local working copies is a build-time toolchain
+  downloaded from Google and is intentionally excluded from this repository
+  by `.gitignore`. Only the project's own sources are published here.
+- The signed APK in `release/` was built with Android build-tools 35.0.0
+  (aapt2 / d8 / apksigner). The APK embeds only this project's own assets.
+
+## Related publications
+
+- Zenodo paper records for this project (see `README.md` for the DOI).
+- The `paper/` directory contains the Chinese and English manuscript sources
+  (`.docx` and `.md`) for convenience and reproducibility.
+
+## Medical notice
+
+This project implements a Traditional Chinese Medicine (TCM) reasoning model
+for educational and research use. It is **not** a medical device and does not
+provide medical advice. See `DISCLAIMER.md`.

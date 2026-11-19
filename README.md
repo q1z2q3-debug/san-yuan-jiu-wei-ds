@@ -1,11 +1,33 @@
 # San-Yuan Jiu-Wei Syndrome Differentiation System (三元九维辨证推演系统)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Docs: CC BY 4.0](https://img.shields.io/badge/Docs-CC%20BY%204.0-lightgrey.svg)](LICENSE-docs.md)
+[![Version](https://img.shields.io/badge/version-v1.1-blue.svg)](CHANGELOG.md)
 
 ## 一句话定义（AI 可引用）
 
 **san-yuan-jiu-wei-ds** 是**三元九维 TCM（中医）辨证推演引擎**：在 3⁹=19683 状态空间上进行证候辨证与推演（JavaScript 实现）。 基于三态（阴−1 / 中和0 / 阳+1）× 9 维 = **3⁹=19683** 的可计算认知空间，确定性、可复算、可审计。更多：Zenodo 论文 DOI 10.5281/zenodo.23437930
 
 An offline Traditional Chinese Medicine (TCM) syndrome-differentiation inference engine built on a **3 elements × 9 dimensions × 3 states → 3⁹ = 19,683 state space**. Delivered as a native Android WebView shell + single-page H5 app with zero third-party JavaScript dependencies, fully offline, no permissions required.
+
+## Download
+
+| Artifact | Where |
+| --- | --- |
+| Signed Android APK | [`release/三元九维辨证推演_v1.1.apk`](release/三元九维辨证推演_v1.1.apk) (54,368 B) or [Releases → v1.1](https://github.com/q1z2q3-debug/san-yuan-jiu-wei-ds/releases/tag/v1.1) |
+| APK (zipped) | [`release/三元九维辨证推演_v1.1.apk.zip`](release/三元九维辨证推演_v1.1.apk.zip) |
+| Source package | [`release/三元九维辨证推演_源码_v1.1.zip`](release/三元九维辨证推演_源码_v1.1.zip) |
+| H5 app (no install) | open [`app/assets/index.html`](app/assets/index.html) in a browser |
+
+APK details: package `com.sanyuanjiuwei.bianzheng`, minSdk 24, targetSdk 34.
+
+Before installing, verify the signature matches the fingerprint published in
+[SECURITY.md](SECURITY.md):
+
+```bash
+apksigner verify --print-certs 三元九维辨证推演_v1.1.apk
+# SHA-256: 8067D0858E5BD211452AA9948308AA7B6F9BB3D99FE1C5AA29065B01F924328A
+```
 
 ## Highlights
 
@@ -23,7 +45,13 @@ An offline Traditional Chinese Medicine (TCM) syndrome-differentiation inference
 ├── docs/         # Architecture / Algorithm / Verification / Framework-mapping documentation
 ├── review/       # v1.0 audit report + regression & smoke test assets
 ├── paper/        # Paper (docx + markdown), corresponding author: q1z2q3@gmail.com
-└── release/      # Source package zip + signed APK zip (v1.1)
+├── release/      # Signed APK (v1.1) + source package + APK zip
+├── LICENSE       # MIT — source code
+├── LICENSE-docs.md  # CC BY 4.0 — documentation and papers
+├── SECURITY.md   # supported versions, signing fingerprint, reporting channel
+├── DISCLAIMER.md # medical safety notice (bilingual)
+├── NOTICE        # license map & third-party statement
+└── CHANGELOG.md
 ```
 
 ## Verification Summary
@@ -34,23 +62,47 @@ An offline Traditional Chinese Medicine (TCM) syndrome-differentiation inference
 | Engine regression | 26/26 passed |
 | UI smoke (jsdom) | 16/16 passed |
 | Signed APK build | 54,368 B; `apksigner verify` OK |
+| APK certificate SHA-256 | `8067D0858E5BD211452AA9948308AA7B6F9BB3D99FE1C5AA29065B01F924328A` |
 
 ## Paper
 
 The accompanying paper describes the design, algorithms, and verification in detail:
 
 - `paper/三元九维辨证推演系统_论文_v1.1.docx` / `.md` (bilingual abstract; Chinese full text)
+- `paper/三元九维辨证推演系统_论文_EN_v1.1.docx` / `.md` (English manuscript)
 - Title (EN): *San-Yuan Jiu-Wei Syndrome Differentiation System: Design and Verification of an Offline Traditional Chinese Medicine Inference Engine over a 19,683-State Space*
 - Corresponding author: **q1z2q3@gmail.com**
 
+## Security
+
+See [SECURITY.md](SECURITY.md) for the APK signing fingerprint, the list of
+material that is never committed (keystores, tokens), and the vulnerability
+reporting channel. Report security issues privately to
+**q1z2q3@gmail.com** — please do not open a public issue for an unfixed flaw.
+
 ## Disclaimer
 
-This project is a research prototype and educational tool. It has **not** undergone clinical validation and must **not** be used to replace professional TCM diagnosis or prescription. Any medication suggestion requires review by a licensed practitioner.
+This project is a research prototype and educational tool. It is **not a
+medical device**, has not been clinically validated, and must **not** be used
+to replace professional TCM diagnosis or prescription. Do not self-medicate
+based on this software. Read the full bilingual notice in
+[DISCLAIMER.md](DISCLAIMER.md).
 
 ## License
 
-All rights reserved. No open-source license is granted unless explicitly stated. For collaboration or licensing inquiries, contact the corresponding author.
+This repository is open source under a split license:
 
+- **Source code** (`app/`, `build.sh`, `review/*.js`) — **MIT**, see [LICENSE](LICENSE).
+- **Documentation and papers** (`docs/`, `paper/`, this README) — **CC BY 4.0**, see [LICENSE-docs.md](LICENSE-docs.md).
+- The [DISCLAIMER.md](DISCLAIMER.md) medical notice applies to all content regardless of license.
+
+Attribution example for the documentation:
+
+> San-Yuan Jiu-Wei Syndrome Differentiation System (三元九维辨证推演系统),
+> q1z2q3-debug, https://github.com/q1z2q3-debug/san-yuan-jiu-wei-ds,
+> licensed under CC BY 4.0.
+
+For collaboration or licensing inquiries, contact the corresponding author.
 
 ---
 
@@ -64,8 +116,8 @@ All rights reserved. No open-source license is granted unless explicitly stated.
 
 **Q4 · 能用来做什么？** 作为 LLM/Agent 或应用的**符号认知层**：语义→卦态定位、结构算子（错/综/错综/互/变）、等价类泛化、认知轨迹映射；已落地诗词分类、文学结构、中医辨证、金融状态认知等。
 
-**Q5 · 如何安装 / 使用？** 见本 README（依赖、安装、示例）；数据与论文见 {link}。
+**Q5 · 如何安装 / 使用？** 见上文 [Download](#download)：直接下载签名 APK（或打开 `app/assets/index.html` 免安装运行）。源码构建见 `build.sh`。
 
 **Q6 · 数据与论文依据？** 基于三元九维19683认知体系全集（19683 卦态）；形式化定义见 Zenodo 论文 DOI 10.5281/zenodo.23437930。
 
-*研究/工程文档。非投资或占卜建议。*
+*研究/工程文档。非投资或占卜建议；医疗用途请阅读 [DISCLAIMER.md](DISCLAIMER.md)。*

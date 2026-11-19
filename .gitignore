@@ -1,0 +1,32 @@
+# --- Build toolchain (never commit the Android SDK) ---
+android/
+sdk/
+build/
+*.class
+
+# --- Signing material (never commit keys) ---
+*.keystore
+*.jks
+*.p12
+*.pem
+*.key
+keystore.properties
+signing.properties
+
+# --- Credentials and local environment ---
+.env
+.env.*
+*credentials*
+.netrc
+
+# --- Tooling scratch / caches ---
+.dumate/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+
+# --- Editor ---
+.vscode/
+.idea/
+*.swp
