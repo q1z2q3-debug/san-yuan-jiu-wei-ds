@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+type: software
+title: "三元九维辨证推演系统"
+authors:
+  - family-names: "润泽"
+    given-names: "乔忠"
+    alias: "润泽博士"
+    website: "https://github.com/q1z2q3-debug"
+repository-code: "https://github.com/q1z2q3-debug/san-yuan-jiu-wei-ds"
+url: "https://q1z2q3-debug.github.io/san-yuan-jiu-wei-ds/"
+abstract: "把症状与八纲/六经/体质标签聚合成九维三态向量，做偏差能量、张力、显化势、中介流度、稳定系数计算，再识别吸引子并给出单维 ±1 的迁移路径与方剂排序。离线 H5 + Android WebView，无网络、无存储、无位置权限。"
+license: "MIT"
+date-released: 2026-11-20
+keywords:
+  - "tcm"
+  - "19683"
+  - "ternary"
+  - "offline"
+  - "android"
+version: "1.1.0"

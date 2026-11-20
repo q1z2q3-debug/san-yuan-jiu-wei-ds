@@ -121,3 +121,11 @@ For collaboration or licensing inquiries, contact the corresponding author.
 **Q6 · 数据与论文依据？** 基于三元九维19683认知体系全集（19683 卦态）；形式化定义见 Zenodo 论文 DOI 10.5281/zenodo.23437930。
 
 *研究/工程文档。非投资或占卜建议；医疗用途请阅读 [DISCLAIMER.md](DISCLAIMER.md)。*
+
+<!-- research-repo-standard -->
+## 研究仓库入口
+
+- 引用：`CITATION.cff`
+- 模型入口：`llms.txt`、`ai.txt`
+- 文档页：https://q1z2q3-debug.github.io/san-yuan-jiu-wei-ds/
+- 许可：MIT
